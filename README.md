@@ -1,3 +1,6 @@
+[![The Self Hosting BLog](https://dcbadge.vercel.app/api/server/fc5qMhkE)](https://discord.gg/fc5qMhkE)
+[![TheSelfHostingBlog](https://forthebadge.com/images/badges/built-with-love.svg)](https://theselfhostingblog.com/)
+
 # Introduction
 
 This playbook will install and set up a kubernetes cluster on raspberry pi's using k3s. It will then enable and install Portainer onto the machine.
