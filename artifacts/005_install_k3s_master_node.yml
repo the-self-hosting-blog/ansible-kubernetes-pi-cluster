@@ -1,0 +1,3 @@
+- name: install K3s on the master node
+  shell:
+    cmd: "curl -sfL https://get.k3s.io | sh -"

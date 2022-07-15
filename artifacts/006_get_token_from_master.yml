@@ -1,0 +1,7 @@
+- name: get token from master
+  command: cat /var/lib/rancher/k3s/server/node-token
+  register: res
+
+- name: set join token as fact
+  set_fact: 
+    master_node_join_token: "{{ res.stdout }}"

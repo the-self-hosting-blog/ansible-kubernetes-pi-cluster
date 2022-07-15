@@ -1,0 +1,21 @@
+- name: check cmdline content for existing c-group setup
+  command: cat /boot/firmware/cmdline.txt
+  register: cmdline
+
+- name: enable c-group memory if disabled
+  args:
+    warn: false
+  command: "sed -i '1s/^/cgroup_enable=memory /' /boot/firmware/cmdline.txt"
+  when: '"cgroup_enable=memory" not in cmdline.stdout'
+
+- name: set c-group_memory=1 if not present
+  args:
+    warn: false
+  command: "sed -i '1s/^/cgroup_memory=1 /' /boot/firmware/cmdline.txt"
+  when: '"cgroup_memory=1" not in cmdline.stdout'
+
+- name: enable c-group cpuset if disabled
+  args:
+    warn: false
+  command: "sed -i '1s/^/cgroup_enable=cpuset /' /boot/firmware/cmdline.txt"
+  when: '"cgroup_enable=cpuset" not in cmdline.stdout'

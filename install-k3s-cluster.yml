@@ -1,0 +1,18 @@
+---
+- name: Install K3s Cluster
+  hosts: picluster
+  become: yes
+  tasks:
+  - import_tasks: ./artifacts/001_update-upgrade.yml
+  - import_tasks: ./artifacts/002_set-hostnames.yml
+  - import_tasks: ./artifacts/003_enable-c-groups.yml
+  - import_tasks: ./artifacts/004_reboot.yml
+  - import_tasks: ./artifacts/005_install_k3s_master_node.yml
+    when: new_hostname == 'pi-one'
+  - import_tasks: ./artifacts/006_get_token_from_master.yml
+    when: new_hostname == 'pi-one'
+  - import_tasks: ./artifacts/007_install_k3s_worker_node.yml
+    when: new_hostname != 'pi-one'
+  - import_tasks: ./artifacts/008_setup_portainer.yml
+    when: new_hostname == 'pi-one'
+  - import_tasks: ./artifacts/004_reboot.yml
