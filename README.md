@@ -1,5 +1,5 @@
+[![TheSelfHostingBlog](https://forthebadge.com/images/badges/built-with-love.svg)](https://theselfhostingblog.com/)  
 [![The Self Hosting BLog](https://dcbadge.vercel.app/api/server/fc5qMhkE)](https://discord.gg/fc5qMhkE)
-[![TheSelfHostingBlog](https://forthebadge.com/images/badges/built-with-love.svg)](https://theselfhostingblog.com/)
 
 # Introduction
 
